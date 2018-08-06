@@ -1,0 +1,26 @@
+
+.calculator{
+ margin: 5% 40% 5% 40%;
+ 
+}
+button{
+  background-color: rgb(172, 164, 164);
+  width: 60px;
+  height: 60px;
+  color: black;
+  border: solid 1px rgb(172, 164, 164);
+  font-size: 20px;
+  outline: 0;
+  
+}
+.big{
+  width: 120px;
+}
+input{
+  width: 240px;
+  height: 80px;
+  background-color: black;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+}
