@@ -13,7 +13,7 @@ class Calculator extends React.Component {
   render() {
     return (
       <div className="calculator">
-        <h1>My Calculator</h1>
+        <h1>CALCULATOR</h1>
         <input value={this.state.value} type="text" className="Disp" />
         <div className="Keypad">
         <div className="calc-key">
@@ -44,8 +44,8 @@ class Calculator extends React.Component {
           <button  onClick={this.handleClick}  value="+">+</button>
         </div>
         <div className="calc-key">
-          <button class="big" onClick={this.handleClick}  value="AC">AC</button>
-          <button class="big" onClick={this.handleClick}  value="C">C</button>
+          <button className="big" onClick={this.handleClick}  value="AC">AC</button>
+          <button className="big" onClick={this.handleClick}  value="C">C</button>
         </div>
       </div>
       </div>
@@ -54,9 +54,18 @@ class Calculator extends React.Component {
   handleClick(e) {
     var val= e.target.value;
     if(val==='='){
+      // this.setState(prevState =>({
+      //   value:String(eval(prevState.value))
+      // }));
+      try{
+      var g=String(eval(this.state.value))    ;
+      this.setState({value:g})}
+      catch(err){
+        // alert(err);
       this.setState(prevState =>({
-        value:String(eval(prevState.value))
-      }));
+      value:' Invalid Expression'
+        }));
+      }
     }
     else if(val==='AC'){
       this.setState(prevState =>({
